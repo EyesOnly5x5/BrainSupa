@@ -28,14 +28,6 @@ public class MainActivity extends AppCompatActivity {
         daten.setSoundBib(true,new Globals.SoundBib( true,this));
         daten.setSoundBib(false,new Globals.SoundBib( false,this));
 
-        Button Merlin = findViewById(R.id.Merlin);
-        Merlin.setTextSize( daten.getMetrics().pxToDp((int)(Merlin.getTextSize()*daten.getMetrics().getFaktor())) );
-        Button Gandalf = findViewById(R.id.Gandalf);
-        Gandalf.setTextSize( daten.getMetrics().pxToDp((int)(Gandalf.getTextSize()*daten.getMetrics().getFaktor())) );
-        Button Harry = findViewById(R.id.Harry);
-        Harry.setTextSize( daten.getMetrics().pxToDp((int)(Harry.getTextSize()*daten.getMetrics().getFaktor())) );
-        Button Houdini = findViewById(R.id.Houdini);
-        Houdini.setTextSize( daten.getMetrics().pxToDp((int)(Houdini.getTextSize()*daten.getMetrics().getFaktor())) );
         Button SupaHirn = findViewById(R.id.SupaHirn);
         SupaHirn.setTextSize( daten.getMetrics().pxToDp((int)(SupaHirn.getTextSize()*daten.getMetrics().getFaktor())) );
         Button SupraHirni = findViewById(R.id.SupraHirni);
@@ -64,38 +56,6 @@ public class MainActivity extends AppCompatActivity {
         Button PIT = findViewById(R.id.PIT);
         PIT.setTextSize( daten.getMetrics().pxToDp((int)(PIT.getTextSize()*daten.getMetrics().getFaktor())) );
 
-        Merlin.setOnClickListener(view -> {
-            Merlin.setBackgroundColor(getResources().getColor(R.color.DarkRed));
-            daten.setActivity(R.layout.activity_merlin);
-            daten.setWoMischen( "Merlin" );
-            daten.setGameData(getResources().getStringArray(R.array.Merlin));
-            startActivity(new Intent(getApplicationContext(),ZauberActivity.class));
-            Merlin.setBackgroundColor(getResources().getColor(R.color.DarkGreen));
-        });
-        Gandalf.setOnClickListener(view -> {
-            Gandalf.setBackgroundColor(getResources().getColor(R.color.DarkRed));
-            daten.setActivity(R.layout.activity_gandalf);
-            daten.setWoMischen( "Gandalf" );
-            daten.setGameData(getResources().getStringArray(R.array.Gandalf));
-            startActivity(new Intent(getApplicationContext(),ZauberActivity.class));
-            Gandalf.setBackgroundColor(getResources().getColor(R.color.DarkGreen));
-        });
-        Harry.setOnClickListener(view -> {
-            Harry.setBackgroundColor(getResources().getColor(R.color.DarkRed));
-            daten.setActivity(R.layout.activity_harry);
-            daten.setWoMischen( "Harry" );
-            daten.setGameData(getResources().getStringArray(R.array.Harry));
-            startActivity(new Intent(getApplicationContext(),ZauberActivity.class));
-            Harry.setBackgroundColor(getResources().getColor(R.color.DarkGreen));
-        });
-        Houdini.setOnClickListener(view -> {
-            Houdini.setBackgroundColor(getResources().getColor(R.color.DarkRed));
-            daten.setActivity(R.layout.activity_houdini);
-            daten.setWoMischen( "Houdini" );
-            daten.setGameData(getResources().getStringArray(R.array.Houdini));
-            startActivity(new Intent(getApplicationContext(),ZauberActivity.class));
-            Houdini.setBackgroundColor(getResources().getColor(R.color.DarkGreen));
-        });
         SupaHirn.setOnClickListener(view -> {
             SupaHirn.setBackgroundColor(getResources().getColor(R.color.DarkRed));
             daten.setActivity(R.layout.activity_supahirn);

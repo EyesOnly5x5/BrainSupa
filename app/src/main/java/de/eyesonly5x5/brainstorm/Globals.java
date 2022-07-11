@@ -135,9 +135,6 @@ public class Globals  extends ListActivity {
     public void setActivity(int act){
         Activity = act;
     }
-    public void setMyContext( ZauberActivity c){
-        myContext = c;
-    }
     public void setMyContext( SupaHirnActivity c){
         myContext = c;
     }
@@ -867,22 +864,14 @@ public class Globals  extends ListActivity {
     private int getWerWoWas(){
         int ret = -1;
         switch( Activity ){
-            case R.layout.activity_merlin:
-                ret = 0;
-                break;
-            case R.layout.activity_gandalf:
             case R.layout.activity_pit:
                 ret = 1;
                 break;
-            case R.layout.activity_harry:
             case R.layout.activity_memory:
                 ret = 2;
                 break;
             case R.layout.activity_supahirn:
                 ret = 3;
-                break;
-            case R.layout.activity_houdini:
-                ret = 4;
                 break;
             case R.layout.activity_nonogram:
             case R.layout.activity_solitar:

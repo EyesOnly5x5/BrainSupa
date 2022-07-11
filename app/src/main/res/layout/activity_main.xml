@@ -8,6 +8,16 @@
     android:paddingRight="16dp"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:id="@+id/iView"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="-0dp"
+        android:background="@drawable/hintergrund"
+        android:gravity="center"
+        android:src="@drawable/ic_brain" />
+
     <TextView
         android:id="@+id/Kopf"
         android:layout_width="match_parent"
@@ -21,70 +31,10 @@
         android:textStyle="bold|italic" />
 
     <RelativeLayout
-        android:id="@+id/butty"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/Kopf"
-        android:gravity="center_horizontal">
-
-        <Button
-            android:id="@+id/Merlin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginBottom="8dp"
-            android:text="@string/title2"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/Gandalf"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginBottom="8dp"
-            android:layout_toEndOf="@id/Merlin"
-            android:text="@string/title3"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/Harry"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginBottom="8dp"
-            android:layout_toEndOf="@id/Gandalf"
-            android:text="@string/title4"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/butty1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/butty"
-        android:gravity="center_horizontal">
-
-        <Button
-            android:id="@+id/Houdini"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginBottom="8dp"
-            android:text="@string/title5"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-    </RelativeLayout>
-
-    <RelativeLayout
         android:id="@+id/butty2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/butty1"
+        android:layout_below="@id/iView"
         android:gravity="center_horizontal">
 
         <Button

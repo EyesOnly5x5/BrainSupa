@@ -14,7 +14,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ZauberActivity" android:screenOrientation="portrait" />
         <activity android:name=".SupaHirnActivity" android:screenOrientation="portrait" />
         <activity android:name=".NonoGramActivity" android:screenOrientation="portrait" />
         <activity android:name=".SudokuActivity" android:screenOrientation="portrait" />
