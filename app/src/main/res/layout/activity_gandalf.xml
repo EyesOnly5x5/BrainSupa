@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    tools:context=".ZauberActivity">
+
+    <TextView
+        android:id="@+id/Kopf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:text="@string/title3"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textSize="34sp"
+        android:textStyle="bold|italic" />
+
+    <RelativeLayout
+        android:id="@+id/butty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Kopf"
+        android:gravity="center_horizontal" >
+
+        <Button
+            android:id="@+id/b1"
+            android:tag="@string/b1"
+            android:layout_width="@dimen/ButX"
+            android:layout_height="@dimen/ButY"
+            android:text=""
+            android:textSize="34sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/b2"
+            android:tag="@string/b2"
+            android:layout_width="@dimen/ButX"
+            android:layout_height="@dimen/ButY"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@id/b1"
+            android:text=""
+            android:textSize="34sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/b3"
+            android:tag="@string/b3"
+            android:layout_width="@dimen/ButX"
+            android:layout_height="@dimen/ButY"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@id/b2"
+            android:text=""
+            android:textSize="34sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/b4"
+            android:tag="@string/b4"
+            android:layout_width="@dimen/ButX"
+            android:layout_height="@dimen/ButY"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@id/b3"
+            android:text=""
+            android:textSize="34sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/b5"
+            android:tag="@string/b5"
+            android:layout_width="@dimen/ButX"
+            android:layout_height="@dimen/ButY"
+            android:layout_below="@id/b1"
+            android:text=""
+            android:textSize="34sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/b6"
+            android:tag="@string/b6"
+            android:layout_width="@dimen/ButX"
+            android:layout_height="@dimen/ButY"
+            android:layout_below="@id/b2"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@id/b5"
+            android:text=""
+            android:textSize="34sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/b7"
+            android:tag="@string/b7"
+            android:layout_width="@dimen/ButX"
+            android:layout_height="@dimen/ButY"
+            android:layout_below="@id/b3"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@id/b6"
+            android:text=""
+            android:textSize="34sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/b8"
+            android:tag="@string/b8"
+            android:layout_width="@dimen/ButX"
+            android:layout_height="@dimen/ButY"
+            android:layout_below="@id/b4"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@id/b7"
+            android:text=""
+            android:textSize="34sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/b9"
+            android:tag="@string/b9"
+            android:layout_width="@dimen/ButX"
+            android:layout_height="@dimen/ButY"
+            android:layout_below="@id/b5"
+            android:text=""
+            android:textSize="34sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/b10"
+            android:tag="@string/b10"
+            android:layout_width="@dimen/ButX"
+            android:layout_height="@dimen/ButY"
+            android:layout_below="@id/b6"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@id/b9"
+            android:text=""
+            android:textSize="34sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/b11"
+            android:tag="@string/b11"
+            android:layout_width="@dimen/ButX"
+            android:layout_height="@dimen/ButY"
+            android:layout_below="@id/b7"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@id/b10"
+            android:text=""
+            android:textSize="34sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/b12"
+            android:tag="@string/b12"
+            android:layout_width="@dimen/ButX"
+            android:layout_height="@dimen/ButY"
+            android:layout_below="@id/b8"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@id/b11"
+            android:text=""
+            android:textSize="34sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/b13"
+            android:tag="@string/b13"
+            android:layout_width="@dimen/ButX"
+            android:layout_height="@dimen/ButY"
+            android:layout_below="@id/b9"
+            android:text=""
+            android:textSize="34sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/b14"
+            android:tag="@string/b14"
+            android:layout_width="@dimen/ButX"
+            android:layout_height="@dimen/ButY"
+            android:layout_below="@id/b10"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@id/b13"
+            android:text=""
+            android:textSize="34sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/b15"
+            android:tag="@string/b15"
+            android:layout_width="@dimen/ButX"
+            android:layout_height="@dimen/ButY"
+            android:layout_below="@id/b11"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@id/b14"
+            android:text=""
+            android:textSize="34sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/b16"
+            android:tag="@string/b16"
+            android:layout_width="@dimen/ButX"
+            android:layout_height="@dimen/ButY"
+            android:layout_below="@id/b12"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@id/b15"
+            android:text=""
+            android:textSize="34sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView"
+        android:tag="Gandalf"
+        android:name="de.eyesonly5x5.brainstorm.MischButton"
+        android:layout_below="@id/butty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        tools:layout="@layout/misch_button" />
+
+</RelativeLayout>
