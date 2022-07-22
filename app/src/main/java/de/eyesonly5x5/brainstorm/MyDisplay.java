@@ -41,7 +41,7 @@ public class MyDisplay {
         float ret = 1.0f;
         if( getMinPixels() < 600 ){
             ret = ("|SupaHirn|SupraHirni|".contains(getWoMischen())&&!flg)?0.4f:1.0f;
-            //ret = 1.0f;
+            // ret = 1.0f;
         } else if( getMinPixels() <= 1080 ){
             ret = 1.0f;
         } else if( getMinPixels() <= 1600 ){

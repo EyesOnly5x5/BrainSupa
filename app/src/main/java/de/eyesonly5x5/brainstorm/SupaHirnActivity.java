@@ -1,11 +1,16 @@
 package de.eyesonly5x5.brainstorm;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
+import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -38,11 +43,33 @@ public class SupaHirnActivity extends AppCompatActivity {
                     if( daten.colorPos(id1) ) changeColor(id1);
                 }
             });
+            button.setOnLongClickListener(view -> {
+                if( !daten.getGewonnen() ) {
+                    int id1 = Integer.parseInt(button.getTag().toString()) - 1;
+                    /*
+                    Context wrapper = new ContextThemeWrapper(this, R.style.PopupMenu);
+                    PopupMenu popupMenu = new PopupMenu( wrapper, view );
+                    // popupMenu.getMenuInflater().inflate(R.menu.menu_popup, popupMenu.getMenu());
+                    for( int i = 0; i < daten.getColor().size(); i++ ) {
+                        popupMenu.getMenu().add(1, 500 + i, 1, "slot" + i);
+                    }
+                    popupMenu.setOnMenuItemClickListener(item -> {
+                        if( daten.colorPos(id1) ) changeColor( id1, item.getItemId()-500 );
+                        return( true );
+                    });
+                    popupMenu.show();
+                    */
+                    if( daten.colorPos(id1) ) showPopup(view, id1);
+                }
+                return( true );
+            });
+
             daten.addButton(button);
         }
 
         for( int id = 1; id <= (BUTTON_IDS.length / daten.getAnzahl()); id++ ){
             Button button = addTbtn( id );
+            button.setTextColor( R.color.black );
             button.setOnClickListener(view -> {
                 if( !daten.getGewonnen()) {
                     int id1 = Integer.parseInt(button.getTag().toString()) - 1;
@@ -71,6 +98,8 @@ public class SupaHirnActivity extends AppCompatActivity {
                     }
                 }
             });
+            button.setOnLongClickListener(view -> ( true ));
+
             daten.addButton(button);
         }
     }
@@ -103,6 +132,7 @@ public class SupaHirnActivity extends AppCompatActivity {
 
         Button button = new Button(this);
         button.setBackgroundColor( button.getContext().getResources().getColor(R.color.black) );
+        button.setGravity( Gravity.CENTER );
         if( id == 1 ) {
             // nixs
             layoutParams.setMargins(10, 10, 0, 20);
@@ -133,6 +163,7 @@ public class SupaHirnActivity extends AppCompatActivity {
         button.setText("");
         button.setId( id );
         button.setTextSize( daten.getMetrics().pxToDp((int)(getResources().getDimension(R.dimen.SupaHTxt)*daten.getMetrics().getFaktor(true ))) );
+        button.setPadding( 0, 0, 0, 0 );
 
         rLbutty.addView(button, layoutParams);
         return( button );
@@ -180,4 +211,53 @@ public class SupaHirnActivity extends AppCompatActivity {
             button.setTextColor( button.getContext().getResources().getColor( R.color.white ) );
     }
 
+    private void changeColor(int id, int color) {
+        Button button = daten.buttons.get(id);
+        daten.getColors()[daten.getColors().length-1][id%daten.getAnzahl()] = color;
+        button.setBackgroundColor( daten.getColor().get( daten.getColors()[daten.getColors().length-1][id%daten.getAnzahl()] ) );
+        button.setText(""+daten.getColors()[daten.getColors().length-1][id%daten.getAnzahl()]);
+        button.setTextColor( button.getContext().getResources().getColor( R.color.black ) );
+        if( daten.getColors()[daten.getColors().length-1][id%daten.getAnzahl()] == 3 )
+            button.setTextColor( button.getContext().getResources().getColor( R.color.white ) );
+    }
+
+    public void showPopup(View v, int id) {
+        LayoutInflater layoutInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        final View popupView = layoutInflater.inflate(R.layout.popup_layout, null);
+        PopupWindow popupWindow = new PopupWindow( popupView, (int)(daten.getButy()*daten.getMetrics().getFaktor())*2, (int)(daten.getButy()*daten.getMetrics().getFaktor())*6 );
+
+        // popupWindow.setBackgroundDrawable(new BitmapDrawable());
+        // popupWindow.setOutsideTouchable(true);
+        popupWindow.setOnDismissListener(new PopupWindow.OnDismissListener() {
+            @Override
+            public void onDismiss() {
+                //TODO do sth here on dismiss
+            }
+        });
+        RelativeLayout rLbutty = (RelativeLayout) popupView.findViewById(R.id.popUPs);
+        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams((int)(daten.getButy()*daten.getMetrics().getFaktor()), (int)(daten.getButy()*daten.getMetrics().getFaktor()));
+        layoutParams.setMargins(10, 10, 0, 0);
+
+        for( int i = 0; i < daten.getColor().size(); i++ ) {
+            Button button = new Button(this );
+            button.setGravity(Gravity.CENTER);
+            if( i == 0 )
+                layoutParams.addRule(RelativeLayout.BELOW, R.id.btn0);
+            else
+                layoutParams.addRule(RelativeLayout.BELOW, (500+i-1));
+
+            button.setOnClickListener(view -> {
+                // if (daten.colorPos(id)) changeColor(id1);
+            });
+            button.setBackgroundColor(daten.getColor().get(i));
+
+            button.setText(""+i);
+            button.setId(500+i);
+            button.setTextSize(daten.getMetrics().pxToDp((int) (getResources().getDimension(R.dimen.SupaHTxt) * daten.getMetrics().getFaktor(true))));
+            //button.setTextSize(20);
+            button.setPadding(0, 0, 0, 0);
+            rLbutty.addView(button, layoutParams);
+        }
+        popupWindow.showAsDropDown(v);
+    }
 }

@@ -10,7 +10,7 @@
     <dimen name="NonoPad">2dp</dimen>
     <dimen name="NonoNG">90dp</dimen>
     <dimen name="NonoLogo">12sp</dimen>
-    <dimen name="SupaHTxt">14sp</dimen>
+    <dimen name="SupaHTxt">12sp</dimen>
     <dimen name="SudoBut">34dp</dimen>
     <dimen name="SudoButX">40dp</dimen>
     <dimen name="SudoButY">40dp</dimen>
