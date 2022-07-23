@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
@@ -17,6 +18,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class SupaHirnActivity extends AppCompatActivity {
+    private int[] btn = { R.id.btn0, R.id.btn1, R.id.btn2, R.id.btn3, R.id.btn4, R.id.btn5 };
     Globals daten = Globals.getInstance();
     int[] BUTTON_IDS;
 
@@ -224,7 +226,7 @@ public class SupaHirnActivity extends AppCompatActivity {
     public void showPopup(View v, int id) {
         LayoutInflater layoutInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         final View popupView = layoutInflater.inflate(R.layout.popup_layout, null);
-        PopupWindow popupWindow = new PopupWindow( popupView, (int)(daten.getButy()*daten.getMetrics().getFaktor())*2, (int)(daten.getButy()*daten.getMetrics().getFaktor())*6 );
+        PopupWindow popupWindow = new PopupWindow( popupView, (int)(daten.getButy()*daten.getMetrics().getFaktor()*1.5f), ViewGroup.LayoutParams.WRAP_CONTENT  );
 
         // popupWindow.setBackgroundDrawable(new BitmapDrawable());
         // popupWindow.setOutsideTouchable(true);
@@ -234,29 +236,12 @@ public class SupaHirnActivity extends AppCompatActivity {
                 //TODO do sth here on dismiss
             }
         });
-        RelativeLayout rLbutty = (RelativeLayout) popupView.findViewById(R.id.popUPs);
-        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams((int)(daten.getButy()*daten.getMetrics().getFaktor()), (int)(daten.getButy()*daten.getMetrics().getFaktor()));
-        layoutParams.setMargins(10, 10, 0, 0);
-
         for( int i = 0; i < daten.getColor().size(); i++ ) {
-            Button button = new Button(this );
-            button.setGravity(Gravity.CENTER);
-            if( i == 0 )
-                layoutParams.addRule(RelativeLayout.BELOW, R.id.btn0);
-            else
-                layoutParams.addRule(RelativeLayout.BELOW, (500+i-1));
-
-            button.setOnClickListener(view -> {
+            TextView tmp = popupView.findViewById(btn[i]);
+            tmp.setHeight( (int)(daten.getButy()*daten.getMetrics().getFaktor()) );
+            tmp.setOnClickListener(view -> {
                 // if (daten.colorPos(id)) changeColor(id1);
             });
-            button.setBackgroundColor(daten.getColor().get(i));
-
-            button.setText(""+i);
-            button.setId(500+i);
-            button.setTextSize(daten.getMetrics().pxToDp((int) (getResources().getDimension(R.dimen.SupaHTxt) * daten.getMetrics().getFaktor(true))));
-            //button.setTextSize(20);
-            button.setPadding(0, 0, 0, 0);
-            rLbutty.addView(button, layoutParams);
         }
         popupWindow.showAsDropDown(v);
     }
