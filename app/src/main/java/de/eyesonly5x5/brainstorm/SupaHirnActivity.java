@@ -9,7 +9,6 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
@@ -18,7 +17,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class SupaHirnActivity extends AppCompatActivity {
-    private int[] btn = { R.id.btn0, R.id.btn1, R.id.btn2, R.id.btn3, R.id.btn4, R.id.btn5 };
+    private int[] btn = { R.id.btn0, R.id.btn1, R.id.btn2, R.id.btn3, R.id.btn4, R.id.btn5, R.id.btn6, R.id.btn7 };
     Globals daten = Globals.getInstance();
     int[] BUTTON_IDS;
 
@@ -225,24 +224,23 @@ public class SupaHirnActivity extends AppCompatActivity {
 
     public void showPopup(View v, int id) {
         LayoutInflater layoutInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        final View popupView = layoutInflater.inflate(R.layout.popup_layout, null);
-        PopupWindow popupWindow = new PopupWindow( popupView, (int)(daten.getButy()*daten.getMetrics().getFaktor()*1.5f), ViewGroup.LayoutParams.WRAP_CONTENT  );
+        final View popupView = layoutInflater.inflate( (daten.getColor().size()<8)? R.layout.popup_layout_06:R.layout.popup_layout_08, null);
+        // PopupWindow popupWindow = new PopupWindow( popupView, (int)(daten.getButy()*daten.getMetrics().getFaktor()*1.5f), ViewGroup.LayoutParams.WRAP_CONTENT );
+        PopupWindow popupWindow = new PopupWindow( popupView, (int)(daten.getButy()*daten.getMetrics().getFaktor()*1.5f),(int)((daten.getButy()+popupView.getContext().getResources().getDimension(R.dimen.Space)+3)*daten.getMetrics().getFaktor())*daten.getColor().size() );
 
-        // popupWindow.setBackgroundDrawable(new BitmapDrawable());
-        // popupWindow.setOutsideTouchable(true);
-        popupWindow.setOnDismissListener(new PopupWindow.OnDismissListener() {
-            @Override
-            public void onDismiss() {
-                //TODO do sth here on dismiss
-            }
-        });
+        popupWindow.setOutsideTouchable(true);
+        /* popupWindow.setOnDismissListener(() -> {
+            // do sth here on dismiss
+        });*/
         for( int i = 0; i < daten.getColor().size(); i++ ) {
             TextView tmp = popupView.findViewById(btn[i]);
             tmp.setHeight( (int)(daten.getButy()*daten.getMetrics().getFaktor()) );
+            int finalI = i;
             tmp.setOnClickListener(view -> {
-                // if (daten.colorPos(id)) changeColor(id1);
+                changeColor( id, finalI);
+                popupWindow.dismiss();
             });
         }
-        popupWindow.showAsDropDown(v);
+        popupWindow.showAsDropDown( v );
     }
 }

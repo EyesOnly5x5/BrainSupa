@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:background="@color/white"
     tools:context=".MainActivity"
     android:padding="5dp">
@@ -18,8 +18,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/btn_0"
-        android:layout_marginBottom="2dp"
+        android:layout_marginBottom="@dimen/Space"
         android:text="@string/b0"
+        android:textColor="@color/black"
         android:gravity="center"
         android:textSize="16sp"
         android:textStyle="bold" />
@@ -30,8 +31,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/btn0"
         android:background="@drawable/btn_1"
-        android:layout_marginBottom="2dp"
+        android:layout_marginBottom="@dimen/Space"
         android:text="@string/b1"
+        android:textColor="@color/black"
         android:gravity="center"
         android:textSize="16sp"
         android:textStyle="bold" />
@@ -41,8 +43,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/btn1"
         android:background="@drawable/btn_2"
-        android:layout_marginBottom="2dp"
+        android:layout_marginBottom="@dimen/Space"
         android:text="@string/b2"
+        android:textColor="@color/black"
         android:gravity="center"
         android:textSize="16sp"
         android:textStyle="bold" />
@@ -52,8 +55,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/btn2"
         android:background="@drawable/btn_3"
-        android:layout_marginBottom="2dp"
+        android:layout_marginBottom="@dimen/Space"
         android:text="@string/b3"
+        android:textColor="@color/white"
         android:gravity="center"
         android:textSize="16sp"
         android:textStyle="bold" />
@@ -63,8 +67,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/btn3"
         android:background="@drawable/btn_4"
-        android:layout_marginBottom="2dp"
+        android:layout_marginBottom="@dimen/Space"
         android:text="@string/b4"
+        android:textColor="@color/black"
         android:gravity="center"
         android:textSize="16sp"
         android:textStyle="bold" />
@@ -76,6 +81,7 @@
         android:background="@drawable/btn_5"
         android:layout_marginBottom="2dp"
         android:text="@string/b5"
+        android:textColor="@color/black"
         android:gravity="center"
         android:textSize="16sp"
         android:textStyle="bold" />
