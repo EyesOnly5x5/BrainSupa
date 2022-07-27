@@ -1,4 +1,4 @@
-package de.eyesonly5x5.brainstorm;
+package de.eyesonly5x5.brainsupa;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -226,7 +226,7 @@ public class SupaHirnActivity extends AppCompatActivity {
         LayoutInflater layoutInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         final View popupView = layoutInflater.inflate( (daten.getColor().size()<8)? R.layout.popup_layout_06:R.layout.popup_layout_08, null);
         // PopupWindow popupWindow = new PopupWindow( popupView, (int)(daten.getButy()*daten.getMetrics().getFaktor()*1.5f), ViewGroup.LayoutParams.WRAP_CONTENT );
-        PopupWindow popupWindow = new PopupWindow( popupView, (int)(daten.getButy()*daten.getMetrics().getFaktor()*1.5f),(int)((daten.getButy()+popupView.getContext().getResources().getDimension(R.dimen.Space)+3)*daten.getMetrics().getFaktor())*daten.getColor().size() );
+        PopupWindow popupWindow = new PopupWindow( popupView, (int)(daten.getButy()*daten.getMetrics().getFaktor()*1.5f),(int)((daten.getButy()+popupView.getContext().getResources().getDimension(R.dimen.Space)+3  )*daten.getMetrics().getFaktor())*daten.getColor().size() );
 
         popupWindow.setOutsideTouchable(true);
         /* popupWindow.setOnDismissListener(() -> {
