@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../../../../layout/custom_preview.xml" value="0.15677083333333333" />
+        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.267" />
         <entry key="app/src/main/res/drawable/RoundShapeBTN.xml" value="0.246875" />
         <entry key="app/src/main/res/drawable/XXceltic_00.xml" value="0.2715" />
         <entry key="app/src/main/res/drawable/bg_rounded.xml" value="0.21510416666666668" />
@@ -66,6 +67,7 @@
         <entry key="app/src/main/res/drawable/face_4_2.xml" value="0.33489583333333334" />
         <entry key="app/src/main/res/drawable/face_4_3.xml" value="0.33489583333333334" />
         <entry key="app/src/main/res/drawable/face_4_4.xml" value="0.33489583333333334" />
+        <entry key="app/src/main/res/drawable/ic_brain.xml" value="0.267" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.32760416666666664" />
         <entry key="app/src/main/res/drawable/ic_pics03_01.xml" value="0.253" />
         <entry key="app/src/main/res/drawable/ic_schlaganfall.xml" value="0.33179487179487177" />
