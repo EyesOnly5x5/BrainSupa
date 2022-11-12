@@ -47,24 +47,10 @@ public class SupaHirnActivity extends AppCompatActivity {
             button.setOnLongClickListener(view -> {
                 if( !daten.getGewonnen() ) {
                     int id1 = Integer.parseInt(button.getTag().toString()) - 1;
-                    /*
-                    Context wrapper = new ContextThemeWrapper(this, R.style.PopupMenu);
-                    PopupMenu popupMenu = new PopupMenu( wrapper, view );
-                    // popupMenu.getMenuInflater().inflate(R.menu.menu_popup, popupMenu.getMenu());
-                    for( int i = 0; i < daten.getColor().size(); i++ ) {
-                        popupMenu.getMenu().add(1, 500 + i, 1, "slot" + i);
-                    }
-                    popupMenu.setOnMenuItemClickListener(item -> {
-                        if( daten.colorPos(id1) ) changeColor( id1, item.getItemId()-500 );
-                        return( true );
-                    });
-                    popupMenu.show();
-                    */
                     if( daten.colorPos(id1) ) showPopup(view, id1);
                 }
                 return( true );
             });
-
             daten.addButton(button);
         }
 
@@ -226,7 +212,7 @@ public class SupaHirnActivity extends AppCompatActivity {
         LayoutInflater layoutInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         final View popupView = layoutInflater.inflate( (daten.getColor().size()<8)? R.layout.popup_layout_06:R.layout.popup_layout_08, null);
         // PopupWindow popupWindow = new PopupWindow( popupView, (int)(daten.getButy()*daten.getMetrics().getFaktor()*1.5f), ViewGroup.LayoutParams.WRAP_CONTENT );
-        PopupWindow popupWindow = new PopupWindow( popupView, (int)(daten.getButy()*daten.getMetrics().getFaktor()*1.5f),(int)((daten.getButy()+popupView.getContext().getResources().getDimension(R.dimen.Space)+3  )*daten.getMetrics().getFaktor())*daten.getColor().size() );
+        PopupWindow popupWindow = new PopupWindow( popupView, (int)(daten.getButy()*daten.getMetrics().getFaktor()*1.5f),(int)((daten.getButy()+popupView.getContext().getResources().getDimension(R.dimen.Space)+3  )*daten.getMetrics().getFaktor()*1.1f)*daten.getColor().size() );
 
         popupWindow.setOutsideTouchable(true);
         /* popupWindow.setOnDismissListener(() -> {

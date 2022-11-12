@@ -32,6 +32,7 @@ public class MyDisplay {
     public int getButtonSize( int lang ){
         return( (int) (getMinPixels() / (Math.sqrt(lang)+2)) );
     }
+
     public void setWoMischen( String wert ){ woMischen = wert; }
     public String getWoMischen( ){ return( woMischen ); }
 
