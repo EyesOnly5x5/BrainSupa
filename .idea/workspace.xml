@@ -20,21 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="abfb1ea1-b31d-4b67-ba76-4df93fcb9f09" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/btn_8.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/btn_9.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/popup_layout_03.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/popup_layout_04.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/popup_layout_05.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/popup_layout_07.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/popup_layout_09.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/popup_layout_10.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetDropDown.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deploymentTargetDropDown.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/de/eyesonly5x5/brainsupa/SupaMasterActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/de/eyesonly5x5/brainsupa/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/de/eyesonly5x5/brainsupa/MainActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/array.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/array.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -252,13 +242,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1629726477167</updated>
-    </task>
-    <task id="LOCAL-00059" summary="Solitaer start, Stuffe 1.">
-      <created>1634140757034</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1634140757035</updated>
     </task>
     <task id="LOCAL-00060" summary="Solitaer start, Stuffe 2.">
       <created>1634227117238</created>
@@ -596,12 +579,18 @@
       <option name="project" value="LOCAL" />
       <updated>1669030873931</updated>
     </task>
-    <option name="localTasksCounter" value="108" />
+    <task id="LOCAL-00108" summary="Vorbereitung SupaMaster.">
+      <created>1670155883933</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1670155883934</updated>
+    </task>
+    <option name="localTasksCounter" value="109" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Anleitungen Fertig." />
     <MESSAGE value="Größen anpassungen." />
     <MESSAGE value="Größen anpassungen 3." />
     <MESSAGE value="Größen anpassungen 4." />
@@ -626,6 +615,7 @@
     <MESSAGE value="License hinzugefügt." />
     <MESSAGE value="kleine grössen anpassung" />
     <MESSAGE value="kleinere anpassungen." />
-    <option name="LAST_COMMIT_MESSAGE" value="kleinere anpassungen." />
+    <MESSAGE value="Vorbereitung SupaMaster." />
+    <option name="LAST_COMMIT_MESSAGE" value="Vorbereitung SupaMaster." />
   </component>
 </project>

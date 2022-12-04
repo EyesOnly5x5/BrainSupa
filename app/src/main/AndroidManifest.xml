@@ -15,6 +15,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".SupaHirnActivity" android:screenOrientation="portrait" />
+        <activity android:name=".SupaMasterActivity" android:screenOrientation="portrait" />
     </application>
 
 </manifest>

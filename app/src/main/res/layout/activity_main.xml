@@ -39,10 +39,12 @@
 
         <Button
             android:id="@+id/SupaHirn"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginStart="55dp"
+            android:layout_marginEnd="55dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
             android:text="@string/title6"
             android:textAllCaps="false"
             android:textSize="20sp"
@@ -50,10 +52,12 @@
 
         <Button
             android:id="@+id/SupraHirni"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginStart="55dp"
+            android:layout_marginEnd="55dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
             android:layout_below="@id/SupaHirn"
             android:text="@string/title7"
             android:textAllCaps="false"
@@ -62,10 +66,12 @@
 
         <Button
             android:id="@+id/SupaMaster"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginStart="55dp"
+            android:layout_marginEnd="55dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
             android:layout_below="@id/SupraHirni"
             android:text="@string/title8"
             android:textAllCaps="false"
