@@ -30,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
         SupaHirn.setTextSize( daten.getMetrics().pxToDp((int)(SupaHirn.getTextSize()*daten.getMetrics().getFaktor())) );
         Button SupraHirni = findViewById(R.id.SupraHirni);
         SupraHirni.setTextSize( daten.getMetrics().pxToDp((int)(SupraHirni.getTextSize()*daten.getMetrics().getFaktor())) );
+        Button SupaMaster = findViewById(R.id.SupaMaster);
+        SupaMaster.setTextSize( daten.getMetrics().pxToDp((int)(SupaMaster.getTextSize()*daten.getMetrics().getFaktor())) );
 
         SupaHirn.setOnClickListener(view -> {
             SupaHirn.setBackgroundColor(getResources().getColor(R.color.DarkRed));
@@ -43,6 +45,14 @@ public class MainActivity extends AppCompatActivity {
             SupraHirni.setBackgroundColor(getResources().getColor(R.color.DarkRed));
             daten.setActivity(R.layout.activity_supahirn);
             daten.setWoMischen( "SupraHirni" );
+            daten.setGameData(getResources().getIntArray(R.array.color8),5);
+            startActivity(new Intent(getApplicationContext(),SupaHirnActivity.class));
+            SupraHirni.setBackgroundColor(getResources().getColor(R.color.DarkGreen));
+        });
+        SupaMaster.setOnClickListener(view -> {
+            SupaMaster.setBackgroundColor(getResources().getColor(R.color.DarkRed));
+            daten.setActivity(R.layout.activity_supahirn);
+            daten.setWoMischen( "SupaMaster" );
             daten.setGameData(getResources().getIntArray(R.array.color8),5);
             startActivity(new Intent(getApplicationContext(),SupaHirnActivity.class));
             SupraHirni.setBackgroundColor(getResources().getColor(R.color.DarkGreen));
