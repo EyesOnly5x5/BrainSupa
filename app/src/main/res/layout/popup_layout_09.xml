@@ -4,7 +4,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:background="@color/white"
-    tools:context=".MainActivity"
+    tools:context="io.github.eyesonly5x5.MainActivity"
     android:padding="5dp">
 
     <RelativeLayout

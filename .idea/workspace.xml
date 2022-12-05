@@ -19,12 +19,26 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abfb1ea1-b31d-4b67-ba76-4df93fcb9f09" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/de/eyesonly5x5/brainsupa/SupaMasterActivity.java" afterDir="false" />
+    <list default="true" id="abfb1ea1-b31d-4b67-ba76-4df93fcb9f09" name="Default Changelist" comment="Vorbereitung 2 SupaMaster.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/de/eyesonly5x5/brainsupa/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/de/eyesonly5x5/brainsupa/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/de/eyesonly5x5/brainsupa/Globals.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/io/github/eyesonly5x5/Globals.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/de/eyesonly5x5/brainsupa/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/io/github/eyesonly5x5/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/de/eyesonly5x5/brainsupa/MischButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/io/github/eyesonly5x5/MischButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/de/eyesonly5x5/brainsupa/MyDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/io/github/eyesonly5x5/MyDisplay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/de/eyesonly5x5/brainsupa/SupaHirnActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/io/github/eyesonly5x5/SupaHirnActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/de/eyesonly5x5/brainsupa/SupaMasterActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/io/github/eyesonly5x5/SupaMasterActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_supahirn.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_supahirn.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/popup_layout_03.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/popup_layout_03.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/popup_layout_04.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/popup_layout_04.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/popup_layout_05.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/popup_layout_05.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/popup_layout_06.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/popup_layout_06.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/popup_layout_07.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/popup_layout_07.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/popup_layout_08.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/popup_layout_08.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/popup_layout_09.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/popup_layout_09.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/popup_layout_10.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/popup_layout_10.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -242,13 +256,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1629726477167</updated>
-    </task>
-    <task id="LOCAL-00060" summary="Solitaer start, Stuffe 2.">
-      <created>1634227117238</created>
-      <option name="number" value="00060" />
-      <option name="presentableId" value="LOCAL-00060" />
-      <option name="project" value="LOCAL" />
-      <updated>1634227117239</updated>
     </task>
     <task id="LOCAL-00061" summary="Solitaer start, Stuffe 3.">
       <created>1634311741623</created>
@@ -586,12 +593,18 @@
       <option name="project" value="LOCAL" />
       <updated>1670155883934</updated>
     </task>
-    <option name="localTasksCounter" value="109" />
+    <task id="LOCAL-00109" summary="Vorbereitung 2 SupaMaster.">
+      <created>1670167615930</created>
+      <option name="number" value="00109" />
+      <option name="presentableId" value="LOCAL-00109" />
+      <option name="project" value="LOCAL" />
+      <updated>1670167615931</updated>
+    </task>
+    <option name="localTasksCounter" value="110" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Größen anpassungen." />
     <MESSAGE value="Größen anpassungen 3." />
     <MESSAGE value="Größen anpassungen 4." />
     <MESSAGE value="Größen anpassungen 5." />
@@ -616,6 +629,7 @@
     <MESSAGE value="kleine grössen anpassung" />
     <MESSAGE value="kleinere anpassungen." />
     <MESSAGE value="Vorbereitung SupaMaster." />
-    <option name="LAST_COMMIT_MESSAGE" value="Vorbereitung SupaMaster." />
+    <MESSAGE value="Vorbereitung 2 SupaMaster." />
+    <option name="LAST_COMMIT_MESSAGE" value="Vorbereitung 2 SupaMaster." />
   </component>
 </project>

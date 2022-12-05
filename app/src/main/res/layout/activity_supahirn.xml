@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
-    tools:context=".SupaHirnActivity">
+    tools:context="io.github.eyesonly5x5.SupaHirnActivity">
 
     <TextView
         android:id="@+id/Kopf"

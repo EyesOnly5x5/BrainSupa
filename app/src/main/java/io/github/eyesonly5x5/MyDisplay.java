@@ -1,4 +1,4 @@
-package de.eyesonly5x5.brainsupa;
+package io.github.eyesonly5x5;
 
 import android.content.res.Resources;
 import android.util.DisplayMetrics;
