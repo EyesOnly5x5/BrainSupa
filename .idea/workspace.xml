@@ -20,9 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="abfb1ea1-b31d-4b67-ba76-4df93fcb9f09" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/popup_layout_02.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LICENSE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/io/github/eyesonly5x5/Globals.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/io/github/eyesonly5x5/Globals.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/io/github/eyesonly5x5/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/io/github/eyesonly5x5/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/io/github/eyesonly5x5/SupaHirnActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/io/github/eyesonly5x5/SupaHirnActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/io/github/eyesonly5x5/SupaMasterActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/io/github/eyesonly5x5/SupaMasterActivity.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -240,13 +243,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1629726477167</updated>
-    </task>
-    <task id="LOCAL-00062" summary="Solitaer start, Stuffe 4.">
-      <created>1634390468273</created>
-      <option name="number" value="00062" />
-      <option name="presentableId" value="LOCAL-00062" />
-      <option name="project" value="LOCAL" />
-      <updated>1634390468273</updated>
     </task>
     <task id="LOCAL-00063" summary="Solitaer start, Stuffe 5.">
       <created>1634466048155</created>
@@ -584,12 +580,18 @@
       <option name="project" value="LOCAL" />
       <updated>1670231029434</updated>
     </task>
-    <option name="localTasksCounter" value="111" />
+    <task id="LOCAL-00111" summary="LICENSE geändert.">
+      <created>1670237093890</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
+      <option name="project" value="LOCAL" />
+      <updated>1670237093890</updated>
+    </task>
+    <option name="localTasksCounter" value="112" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Größen anpassungen 4." />
     <MESSAGE value="Größen anpassungen 5." />
     <MESSAGE value="Größen anpassungen 6. SudoKuh Fertig." />
     <MESSAGE value="Größen anpassungen 7. SolitaerHalma Fertig." />
@@ -614,6 +616,7 @@
     <MESSAGE value="Vorbereitung SupaMaster." />
     <MESSAGE value="Vorbereitung 2 SupaMaster." />
     <MESSAGE value="package name geändert." />
-    <option name="LAST_COMMIT_MESSAGE" value="package name geändert." />
+    <MESSAGE value="LICENSE geändert." />
+    <option name="LAST_COMMIT_MESSAGE" value="LICENSE geändert." />
   </component>
 </project>

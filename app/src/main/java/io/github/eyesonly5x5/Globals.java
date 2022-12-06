@@ -158,6 +158,23 @@ public class Globals  extends ListActivity {
         }
     }
 
+    public void ColorMischer2() {
+        int id;
+        Random r = new Random();
+        Zuege = (maxFelder / Anzahl);
+        gewonnen = false;
+        for (int i = 0; i < Anzahl; i++) {
+            id = r.nextInt( Color.size() );
+            Colors[0][i] = id;
+            Colors[Colors.length-1][i] = -1;
+        }
+        for (id = 0; id < maxFelder; id++) {
+            Button button = buttons.get(id);
+            button.setBackgroundColor(myRes.getColor(R.color.DarkGreen));
+            button.setText("");
+        }
+    }
+
     public void openHiddenColor(){
         for (int id = 0; id < Anzahl; id++) {
             Button button = buttons.get(id);
@@ -167,8 +184,12 @@ public class Globals  extends ListActivity {
 
     @SuppressLint("WrongConstant")
     private int anzahlButtons(){
-        int AnzBut = (((metrics.getMaxPixels()) / (int)(this.Buty*metrics.getFaktor()))-3);
-        // int dimenX = (int) metrics.getMinPixels() / (column+1);
+        int AnzBut;
+        if( "|SupaMaster|".contains(getWoMischen()) ) {
+            AnzBut = 4;
+        } else {
+            AnzBut = (((metrics.getMaxPixels()) / (int) (this.Buty * metrics.getFaktor())) - 3);
+        }
         if( AnzBut > 11 ) AnzBut = 11;
         AnzBut *= Anzahl;
         return( AnzBut );

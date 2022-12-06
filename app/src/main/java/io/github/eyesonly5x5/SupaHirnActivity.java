@@ -32,6 +32,7 @@ public class SupaHirnActivity extends AppCompatActivity {
         BUTTON_IDS = daten.getButtonIDs();
         TextView vw = findViewById(R.id.Kopf);
         vw.setTextSize( daten.getMetrics().pxToDp((int)(vw.getTextSize()*2*daten.getMetrics().getFaktor())) );
+        vw.setText( daten.getWoMischen() );
         Button Mischa = findViewById(R.id.Mischa);
         Mischa.setTextSize( daten.getMetrics().pxToDp((int)(Mischa.getTextSize()*daten.getMetrics().getFaktor())) );
         Mischa.setOnClickListener(view -> {

@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
             SupaMaster.setBackgroundColor(getResources().getColor(R.color.DarkRed));
             daten.setActivity(R.layout.activity_supahirn);
             daten.setWoMischen( "SupaMaster" );
-            daten.setGameData(getResources().getIntArray(R.array.color8),5);
+            daten.setGameData(getResources().getIntArray(R.array.color0),5);
             startActivity(new Intent(getApplicationContext(),SupaMasterActivity.class));
             SupaMaster.setBackgroundColor(getResources().getColor(R.color.DarkGreen));
         });
