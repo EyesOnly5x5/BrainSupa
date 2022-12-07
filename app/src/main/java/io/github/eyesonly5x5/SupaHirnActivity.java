@@ -191,18 +191,12 @@ public class SupaHirnActivity extends AppCompatActivity {
 
     // @SuppressLint("ResourceAsColor")
     private void changeColor(int id) {
-        Button button = daten.buttons.get(id);
-        daten.getColors()[daten.getColors().length-1][id%daten.getAnzahl()]++;
-        if( daten.getColors()[daten.getColors().length-1][id%daten.getAnzahl()] >= daten.getColor().size() ) daten.getColors()[daten.getColors().length-1][id%daten.getAnzahl()] = 0;
-        button.setBackgroundColor( daten.getColor().get( daten.getColors()[daten.getColors().length-1][id%daten.getAnzahl()] ) );
-        button.setText(""+daten.getColors()[daten.getColors().length-1][id%daten.getAnzahl()]);
-        button.setTextColor( button.getContext().getResources().getColor( R.color.black ) );
-        if( daten.getColors()[daten.getColors().length-1][id%daten.getAnzahl()] == 3 )
-            button.setTextColor( button.getContext().getResources().getColor( R.color.white ) );
+        changeColor( id, daten.getColors()[daten.getColors().length-1][id%daten.getAnzahl()] +1 );
     }
 
     private void changeColor(int id, int color) {
         Button button = daten.buttons.get(id);
+        if( color >= daten.getColor().size() ) color = 0;
         daten.getColors()[daten.getColors().length-1][id%daten.getAnzahl()] = color;
         button.setBackgroundColor( daten.getColor().get( daten.getColors()[daten.getColors().length-1][id%daten.getAnzahl()] ) );
         button.setText(""+daten.getColors()[daten.getColors().length-1][id%daten.getAnzahl()]);
@@ -214,8 +208,7 @@ public class SupaHirnActivity extends AppCompatActivity {
     public void showPopup(View v, int id) {
         LayoutInflater layoutInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         final View popupView = layoutInflater.inflate( (daten.getColor().size()<8)? R.layout.popup_layout_06:R.layout.popup_layout_08, null);
-        // PopupWindow popupWindow = new PopupWindow( popupView, (int)(daten.getButy()*daten.getMetrics().getFaktor()*1.5f), ViewGroup.LayoutParams.WRAP_CONTENT );
-        PopupWindow popupWindow = new PopupWindow( popupView, (int)(daten.getButy()*daten.getMetrics().getFaktor()*1.5f),(int)((daten.getButy()+popupView.getContext().getResources().getDimension(R.dimen.Space)+3  )*daten.getMetrics().getFaktor()*1.1f)*daten.getColor().size() );
+        PopupWindow popupWindow = new PopupWindow( popupView, (int)(daten.getButy()*daten.getMetrics().getFaktor()*1.5f), (int)((daten.getButy()+popupView.getContext().getResources().getDimension(R.dimen.Space)+3  )*daten.getMetrics().getFaktor()*(1.1f-(daten.getColor().size()*0.01f)))*daten.getColor().size() );
 
         popupWindow.setOutsideTouchable(true);
         /* popupWindow.setOnDismissListener(() -> {

@@ -37,9 +37,55 @@ public class SupaMasterActivity extends AppCompatActivity {
         Button Mischa = findViewById(R.id.Mischa);
         Mischa.setTextSize( daten.getMetrics().pxToDp((int)(Mischa.getTextSize()*daten.getMetrics().getFaktor())) );
         Mischa.setOnClickListener(view -> {
-            daten.ColorMischer2();
+            if( Mischa.getText().equals( getApplicationContext().getString( R.string.Mischa ) ) ){
+                daten.ColorMischer2();
+                Mischa.setText( R.string.title9a );
+            } else {
+                // daten.DasIstEs();
+                daten.getSoundBib( daten.getGewonnen() ).playSound();
+                daten.setGewonnen( true );
+                Mischa.setText(R.string.Mischa);
+                // daten.deleNonogram();
+            }
         });
+/*
+        for( int id = 1; id <= (BUTTON_IDS.length / daten.getAnzahl()); id++ ){
+            Button button = addTbtn( id );
+            button.setTextColor( R.color.black );
+            button.setOnClickListener(view -> {
+                if( !daten.getGewonnen()) {
+                    int id1 = Integer.parseInt(button.getTag().toString()) - 1;
+                    if( daten.colorPos(id1) ) {
+                        button.setText("");
+                        button.setBackgroundColor(button.getContext().getResources().getColor(R.color.white));
+                        daten.decZuege();
+                        Button tmp = daten.buttons.get( daten.getMaxFelder()+daten.getZuege()-1 );
+                        tmp.setText("<- Setzen");
+                        tmp.setBackgroundColor(button.getContext().getResources().getColor(R.color.Gelb));
+                        if (daten.checkColor(button)) {
+                            daten.setGewonnen(true);
+                            tmp = daten.buttons.get(daten.getMaxFelder() );
+                            tmp.setText("Bravo");
+                            daten.openHiddenColor();
+                            daten.getSoundBib(true).playSound();
+                        } else {
+                            if( daten.getZuege() == 1 ){
+                                daten.setGewonnen(true);
+                                tmp = daten.buttons.get(daten.getMaxFelder() );
+                                tmp.setText("nixDA");
+                                daten.openHiddenColor();
+                                daten.getSoundBib(false).playSound();
+                            }
+                        }
+                    }
+                }
+            });
+            button.setOnLongClickListener(view -> ( true ));
 
+            daten.addButton(button);
+        }
+
+ */
         for(int id : BUTTON_IDS) {
             Button button = addbtn( id );
             button.setOnClickListener(view -> {
@@ -115,18 +161,12 @@ public class SupaMasterActivity extends AppCompatActivity {
 
     // @SuppressLint("ResourceAsColor")
     private void changeColor(int id) {
-        Button button = daten.buttons.get(id);
-        daten.getColors()[daten.getColors().length-1][id%daten.getAnzahl()]++;
-        if( daten.getColors()[daten.getColors().length-1][id%daten.getAnzahl()] >= daten.getColor().size() ) daten.getColors()[daten.getColors().length-1][id%daten.getAnzahl()] = 0;
-        button.setBackgroundColor( daten.getColor().get( daten.getColors()[daten.getColors().length-1][id%daten.getAnzahl()] ) );
-        button.setText(""+daten.getColors()[daten.getColors().length-1][id%daten.getAnzahl()]);
-        button.setTextColor( button.getContext().getResources().getColor( R.color.black ) );
-        if( daten.getColors()[daten.getColors().length-1][id%daten.getAnzahl()] == 3 )
-            button.setTextColor( button.getContext().getResources().getColor( R.color.white ) );
+        changeColor( id, daten.getColors()[daten.getColors().length-1][id%daten.getAnzahl()] +1 );
     }
 
     private void changeColor(int id, int color) {
         Button button = daten.buttons.get(id);
+        if( color >= btnLaenge ) color = 0;
         daten.getColors()[daten.getColors().length-1][id%daten.getAnzahl()] = color;
         button.setBackgroundColor( daten.getColor().get( daten.getColors()[daten.getColors().length-1][id%daten.getAnzahl()] ) );
         button.setText(""+daten.getColors()[daten.getColors().length-1][id%daten.getAnzahl()]);
