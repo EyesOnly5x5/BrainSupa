@@ -3,6 +3,7 @@ package io.github.eyesonly5x5;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -38,56 +39,23 @@ public class SupaMasterActivity extends AppCompatActivity {
         Mischa.setTextSize( daten.getMetrics().pxToDp((int)(Mischa.getTextSize()*daten.getMetrics().getFaktor())) );
         Mischa.setOnClickListener(view -> {
             if( Mischa.getText().equals( getApplicationContext().getString( R.string.Mischa ) ) ){
-                daten.ColorMischer2();
+                daten.ColorMischer2( btnLaenge );
                 Mischa.setText( R.string.title9a );
             } else {
-                // daten.DasIstEs();
-                daten.getSoundBib( daten.getGewonnen() ).playSound();
-                daten.setGewonnen( true );
-                Mischa.setText(R.string.Mischa);
-                // daten.deleNonogram();
+                if( checkIt() ) {
+                    daten.getSoundBib(daten.getGewonnen()).playSound();
+                    daten.setGewonnen(true);
+                    Mischa.setText(R.string.Mischa);
+                } else {
+                    daten.incZuege();
+                }
             }
         });
-/*
-        for( int id = 1; id <= (BUTTON_IDS.length / daten.getAnzahl()); id++ ){
-            Button button = addTbtn( id );
-            button.setTextColor( R.color.black );
-            button.setOnClickListener(view -> {
-                if( !daten.getGewonnen()) {
-                    int id1 = Integer.parseInt(button.getTag().toString()) - 1;
-                    if( daten.colorPos(id1) ) {
-                        button.setText("");
-                        button.setBackgroundColor(button.getContext().getResources().getColor(R.color.white));
-                        daten.decZuege();
-                        Button tmp = daten.buttons.get( daten.getMaxFelder()+daten.getZuege()-1 );
-                        tmp.setText("<- Setzen");
-                        tmp.setBackgroundColor(button.getContext().getResources().getColor(R.color.Gelb));
-                        if (daten.checkColor(button)) {
-                            daten.setGewonnen(true);
-                            tmp = daten.buttons.get(daten.getMaxFelder() );
-                            tmp.setText("Bravo");
-                            daten.openHiddenColor();
-                            daten.getSoundBib(true).playSound();
-                        } else {
-                            if( daten.getZuege() == 1 ){
-                                daten.setGewonnen(true);
-                                tmp = daten.buttons.get(daten.getMaxFelder() );
-                                tmp.setText("nixDA");
-                                daten.openHiddenColor();
-                                daten.getSoundBib(false).playSound();
-                            }
-                        }
-                    }
-                }
-            });
-            button.setOnLongClickListener(view -> ( true ));
 
-            daten.addButton(button);
-        }
-
- */
+        int i = 0;
         for(int id : BUTTON_IDS) {
             Button button = addbtn( id );
+            if( i++ > 4 ) button.setVisibility(View.GONE);
             button.setOnClickListener(view -> {
                 if( !daten.getGewonnen() ) {
                     int id1 = Integer.parseInt(button.getTag().toString()) - 1;
@@ -116,13 +84,25 @@ public class SupaMasterActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item){
         switch (item.getItemId()){
             case R.id.mischy:
-                daten.ColorMischer2();
+                daten.ColorMischer2( btnLaenge );
                 return( true );
             case R.id.AnLeit:
                 daten.Anleitung( this, R.string.AnleitSuppa );
                 return( true );
         }
         return( super.onOptionsItemSelected( item) );
+    }
+
+    private Boolean checkIt(){
+        Boolean ret = false;
+        daten.checkColor2();
+        int i = 0;
+        for(int id : BUTTON_IDS) {
+            Button button = findViewById( id );
+            if( i++ < (daten.getZuege()+1)*5 ) button.setVisibility( View.VISIBLE );
+            Log.d("Debuggy:", "Züege:"+(daten.getZuege())*5+"Züege:"+(daten.getZuege()+1)*5+" id:"+id );
+        }
+       return( ret );
     }
 
     @SuppressLint("ResourceAsColor")

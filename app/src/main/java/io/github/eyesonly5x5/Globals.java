@@ -70,6 +70,9 @@ public class Globals  extends ListActivity {
     public int decZuege() {
         return --Zuege;
     }
+    public int incZuege() {
+        return ++Zuege;
+    }
 
     public void setAusgabe(TextView wert) {
         Ausgabe = wert;
@@ -158,13 +161,13 @@ public class Globals  extends ListActivity {
         }
     }
 
-    public void ColorMischer2() {
+    public void ColorMischer2(int btnLaenge) {
         int id;
         Random r = new Random();
-        Zuege = (maxFelder / Anzahl);
+        Zuege = 1;
         gewonnen = false;
         for (int i = 0; i < Anzahl; i++) {
-            id = r.nextInt( Color.size() );
+            id = r.nextInt( btnLaenge );
             Colors[0][i] = id;
             Colors[Colors.length-1][i] = -1;
         }
@@ -282,9 +285,36 @@ public class Globals  extends ListActivity {
         return( richtig == Anzahl );
     }
 
+    public boolean checkColor2( ){
+        int richtig=0, vorhanden=0;
+        int[][] c = new int[2][Anzahl];
+        for( int i=0; i < Anzahl; i++ ) {
+            c[0][i] = Colors[0][i];
+            c[1][i] = Colors[Colors.length - 1][i];
+            Colors[Colors.length - 1][i] = -1;
+            if (c[0][i] == c[1][i]) {
+                richtig++;
+                c[0][i] = -1;
+                c[1][i] = -1;
+            }
+        }
+        for( int i=0; i < Anzahl; i++ ) {
+            for( int j=0; j < Anzahl; j++ ){
+                if( (c[0][j] != -1) && (c[1][i] != -1) && (c[0][j] == c[1][i]) ){
+                    vorhanden++;
+                    c[0][j] = -1;
+                    c[1][i] = -1;
+                }
+            }
+        }
+        // button.setText("R:"+richtig+" / V:"+vorhanden);
+        return( richtig == Anzahl );
+    }
+
     public boolean colorPos( int id ){
         boolean Flage;
         Flage = ((Zuege+200) == (id+1)) || (id >= (((Zuege*Anzahl)-Anzahl)) && (id < (Zuege*Anzahl)));
+        // Log.d("Debuggy:", "Züege:"+Zuege+" id:"+id+" Anzahl:"+Anzahl );
         return( Flage );
     }
 
