@@ -95,12 +95,19 @@ public class SupaMasterActivity extends AppCompatActivity {
 
     private Boolean checkIt(){
         Boolean ret = false;
-        daten.checkColor2();
-        int i = 0;
-        for(int id : BUTTON_IDS) {
-            Button button = findViewById( id );
-            if( i++ < (daten.getZuege()+1)*5 ) button.setVisibility( View.VISIBLE );
-            Log.d("Debuggy:", "Züege:"+(daten.getZuege())*5+"Züege:"+(daten.getZuege()+1)*5+" id:"+id );
+        // daten.checkColor2();
+        int id = 0;
+        //for(int id : BUTTON_IDS) {
+        for(int i=0; i< BUTTON_IDS.length; i++) {
+            id = BUTTON_IDS[i];
+            Button button = findViewById(id);
+            if ((i < (daten.getZuege() + 1) * 5) && i>=(daten.getZuege() * 5) ){
+                button.setVisibility(View.VISIBLE);
+                Log.d("Debuggy:", "id:" + id + " btn:" + button.getText()+" Zg:"+daten.getZuege());
+                if( daten.checkColor1( i ) ) {
+                }
+            }
+            // i++;
         }
        return( ret );
     }

@@ -8,6 +8,7 @@ import android.content.res.Resources;
 import android.media.AudioAttributes;
 import android.media.SoundPool;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -285,12 +286,30 @@ public class Globals  extends ListActivity {
         return( richtig == Anzahl );
     }
 
+    public boolean checkColor1( int derHier ){
+        int richtig=0, vorhanden=0;
+        int[][] c = new int[2][Anzahl];
+        for( int i=0; i < Anzahl; i++ ) {
+            c[0][i] = Colors[0][i];
+            c[1][i] = Colors[Colors.length - 1][i];
+            Log.d("Debuggy:","DerHier:"+derHier+" I:"+i+" c0:"+c[0][i]+" c1:"+c[1][i]);
+            Colors[Colors.length - 1][i] = -1;
+            if (c[0][i] == c[1][i]) {
+                richtig++;
+                c[0][i] = -1;
+                c[1][i] = -1;
+            }
+        }
+        return( richtig == Anzahl );
+    }
+
     public boolean checkColor2( ){
         int richtig=0, vorhanden=0;
         int[][] c = new int[2][Anzahl];
         for( int i=0; i < Anzahl; i++ ) {
             c[0][i] = Colors[0][i];
             c[1][i] = Colors[Colors.length - 1][i];
+            Log.d("Debuggy:","I:"+i+" c0:"+c[0][i]+" c1:"+c[1][i]);
             Colors[Colors.length - 1][i] = -1;
             if (c[0][i] == c[1][i]) {
                 richtig++;

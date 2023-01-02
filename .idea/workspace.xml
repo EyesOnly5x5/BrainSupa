@@ -242,13 +242,6 @@
       <option name="presentableId" value="Default" />
       <updated>1629726477167</updated>
     </task>
-    <task id="LOCAL-00065" summary="Solitaer start, Stuffe 7.">
-      <created>1635004608770</created>
-      <option name="number" value="00065" />
-      <option name="presentableId" value="LOCAL-00065" />
-      <option name="project" value="LOCAL" />
-      <updated>1635004608771</updated>
-    </task>
     <task id="LOCAL-00066" summary="Solitaer start, Stuffe 8.">
       <created>1635090539241</created>
       <option name="number" value="00066" />
@@ -585,12 +578,18 @@
       <option name="project" value="LOCAL" />
       <updated>1670431967846</updated>
     </task>
-    <option name="localTasksCounter" value="114" />
+    <task id="LOCAL-00114" summary="SupaMasterActivity diverse Anpassungen.">
+      <created>1672243866130</created>
+      <option name="number" value="00114" />
+      <option name="presentableId" value="LOCAL-00114" />
+      <option name="project" value="LOCAL" />
+      <updated>1672243866131</updated>
+    </task>
+    <option name="localTasksCounter" value="115" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Größen anpassungen 7. SolitaerHalma Fertig." />
     <MESSAGE value="Größen anpassungen 8. SudoKuh / SolitaerHalma Wirklich Fertig." />
     <MESSAGE value="Größen anpassungen 9. NonoGram." />
     <MESSAGE value="Größen anpassungen 10. NonoGram. Fertig" />
@@ -615,6 +614,7 @@
     <MESSAGE value="LICENSE geändert." />
     <MESSAGE value="SupaMasterActivity gestartet." />
     <MESSAGE value="SupaMasterActivity kleine änderungen." />
-    <option name="LAST_COMMIT_MESSAGE" value="SupaMasterActivity kleine änderungen." />
+    <MESSAGE value="SupaMasterActivity diverse Anpassungen." />
+    <option name="LAST_COMMIT_MESSAGE" value="SupaMasterActivity diverse Anpassungen." />
   </component>
 </project>
