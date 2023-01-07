@@ -242,13 +242,6 @@
       <option name="presentableId" value="Default" />
       <updated>1629726477167</updated>
     </task>
-    <task id="LOCAL-00066" summary="Solitaer start, Stuffe 8.">
-      <created>1635090539241</created>
-      <option name="number" value="00066" />
-      <option name="presentableId" value="LOCAL-00066" />
-      <option name="project" value="LOCAL" />
-      <updated>1635090539242</updated>
-    </task>
     <task id="LOCAL-00067" summary="Bis Solitaer Fertig.">
       <created>1635171725532</created>
       <option name="number" value="00067" />
@@ -585,12 +578,18 @@
       <option name="project" value="LOCAL" />
       <updated>1672243866131</updated>
     </task>
-    <option name="localTasksCounter" value="115" />
+    <task id="LOCAL-00115" summary="SupaMasterActivity Richtig/Vorhanden überprüfung Start.">
+      <created>1672672823726</created>
+      <option name="number" value="00115" />
+      <option name="presentableId" value="LOCAL-00115" />
+      <option name="project" value="LOCAL" />
+      <updated>1672672823727</updated>
+    </task>
+    <option name="localTasksCounter" value="116" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Größen anpassungen 8. SudoKuh / SolitaerHalma Wirklich Fertig." />
     <MESSAGE value="Größen anpassungen 9. NonoGram." />
     <MESSAGE value="Größen anpassungen 10. NonoGram. Fertig" />
     <MESSAGE value="Größen anpassungen 11. SuppenHirn. EntelichFertig" />
@@ -615,6 +614,7 @@
     <MESSAGE value="SupaMasterActivity gestartet." />
     <MESSAGE value="SupaMasterActivity kleine änderungen." />
     <MESSAGE value="SupaMasterActivity diverse Anpassungen." />
-    <option name="LAST_COMMIT_MESSAGE" value="SupaMasterActivity diverse Anpassungen." />
+    <MESSAGE value="SupaMasterActivity Richtig/Vorhanden überprüfung Start." />
+    <option name="LAST_COMMIT_MESSAGE" value="SupaMasterActivity Richtig/Vorhanden überprüfung Start." />
   </component>
 </project>

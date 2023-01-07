@@ -95,21 +95,23 @@ public class SupaMasterActivity extends AppCompatActivity {
 
     private Boolean checkIt(){
         Boolean ret = false;
-        // daten.checkColor2();
-        int id = 0;
-        //for(int id : BUTTON_IDS) {
-        for(int i=0; i< BUTTON_IDS.length; i++) {
-            id = BUTTON_IDS[i];
-            Button button = findViewById(id);
-            if ((i < (daten.getZuege() + 1) * 5) && i>=(daten.getZuege() * 5) ){
-                button.setVisibility(View.VISIBLE);
-                Log.d("Debuggy:", "id:" + id + " btn:" + button.getText()+" Zg:"+daten.getZuege());
-                if( daten.checkColor1( i ) ) {
-                }
+        int id1 = 0;
+        int id2 = 0;
+        int[] werte = daten.checkColor1( );
+        //Log.d("Debuggy:", "id:" + id + " btn:" + button.getText()+" Zg:"+daten.getZuege());
+        Log.d("Debuggy:", "werte:" + werte[0] +":"+ werte[1] +":"+ werte[2] +":"+ werte[3] +":"+ werte[4] );
+        for(int i=(daten.getZuege() * 5), j = 0; (i < ((daten.getZuege() + 1) * 5)) && (i < BUTTON_IDS.length); i++, j++ ) {
+            id1 = BUTTON_IDS[i];
+            Button button = findViewById(id1);
+            button.setVisibility(View.VISIBLE);
+            if( werte[j] == 1 ){
+               id2 = BUTTON_IDS[i-5];
+               Button tmpBut = findViewById(id2);
+               changeColor( button, tmpBut, id1 );
             }
-            // i++;
         }
-       return( ret );
+
+        return( ret );
     }
 
     @SuppressLint("ResourceAsColor")
@@ -160,6 +162,13 @@ public class SupaMasterActivity extends AppCompatActivity {
         button.setTextColor( button.getContext().getResources().getColor( R.color.black ) );
         if( daten.getColors()[daten.getColors().length-1][id%daten.getAnzahl()] == 3 )
             button.setTextColor( button.getContext().getResources().getColor( R.color.white ) );
+    }
+
+    private void changeColor( Button btn2, Button btn1, int id ) {
+        daten.getColors()[daten.getColors().length-1][id%daten.getAnzahl()] = Integer.parseInt(btn1.getText().toString());
+        btn2.setBackgroundColor( daten.getColor().get( daten.getColors()[daten.getColors().length-1][id%daten.getAnzahl()] ) );
+        btn2.setText( btn1.getText() );
+        btn2.setTextColor( btn1.getTextColors() );
     }
 
     public void showPopup(View v, int id) {

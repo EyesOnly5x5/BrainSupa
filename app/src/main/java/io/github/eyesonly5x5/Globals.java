@@ -286,21 +286,31 @@ public class Globals  extends ListActivity {
         return( richtig == Anzahl );
     }
 
-    public boolean checkColor1( int derHier ){
-        int richtig=0, vorhanden=0;
+    public int[] checkColor1( ){
+        int[] ret = new int[5];
         int[][] c = new int[2][Anzahl];
         for( int i=0; i < Anzahl; i++ ) {
+            ret[i] = -1;
             c[0][i] = Colors[0][i];
             c[1][i] = Colors[Colors.length - 1][i];
-            Log.d("Debuggy:","DerHier:"+derHier+" I:"+i+" c0:"+c[0][i]+" c1:"+c[1][i]);
+            Log.d("Debuggy:","I:"+i+" c0:"+c[0][i]+" c1:"+c[1][i]);
             Colors[Colors.length - 1][i] = -1;
             if (c[0][i] == c[1][i]) {
-                richtig++;
+                ret[i] = 1;
                 c[0][i] = -1;
                 c[1][i] = -1;
             }
         }
-        return( richtig == Anzahl );
+        for( int i=0; i < Anzahl; i++ ) {
+            for( int j=0; j < Anzahl; j++ ){
+                if( (c[0][j] != -1) && (c[1][i] != -1) && (c[0][j] == c[1][i]) ){
+                    ret[i] = 0;
+                    c[0][j] = -1;
+                    c[1][i] = -1;
+                }
+            }
+        }
+        return( ret );
     }
 
     public boolean checkColor2( ){
