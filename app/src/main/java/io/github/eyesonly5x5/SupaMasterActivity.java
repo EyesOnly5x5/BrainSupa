@@ -3,6 +3,7 @@ package io.github.eyesonly5x5;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -99,7 +100,7 @@ public class SupaMasterActivity extends AppCompatActivity {
         int id2 = 0;
         int[] werte = daten.checkColor1( );
         // Log.d("Debuggy:", "id:" + id + " btn:" + button.getText()+" Zg:"+daten.getZuege());
-        // Log.d("Debuggy:", "werte:" + werte[0] +":"+ werte[1] +":"+ werte[2] +":"+ werte[3] +":"+ werte[4] );
+        Log.d("Debuggy:", "werte:" + werte[0] +":"+ werte[1] +":"+ werte[2] +":"+ werte[3] +":"+ werte[4] );
         for(int i=(daten.getZuege() * 5), j = 0; (i < ((daten.getZuege() + 1) * 5)) && (i < BUTTON_IDS.length); i++, j++ ) {
             id1 = BUTTON_IDS[i];
             Button button = findViewById(id1);
@@ -110,9 +111,15 @@ public class SupaMasterActivity extends AppCompatActivity {
                 id2 = BUTTON_IDS[i-5];
                 Button tmpBut = findViewById(id2);
                 changeColor( button, tmpBut, id1 );
+            } else if( werte[j] == 0 ){
+                id2 = BUTTON_IDS[i-5];
+                Log.d("Debuggy:", "i:" + i +" j:"+ j +" id:"+id2 );
+                Button tmpBut = findViewById(id2);
+                tmpBut.setVisibility(View.GONE);
+            } else {
             }
         }
-        ret = richtig == 5;
+        ret = (richtig == 5);
         if( ret ) daten.setGewonnen( true );
         if( daten.getZuege()>=4 ) ret = true;
         return( ret );

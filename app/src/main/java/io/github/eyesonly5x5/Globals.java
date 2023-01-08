@@ -178,6 +178,7 @@ public class Globals  extends ListActivity {
             button.setBackgroundColor(myRes.getColor(R.color.DarkGreen));
             button.setText("");
             if( id > 4 ) button.setVisibility(View.GONE);
+            else button.setVisibility(View.VISIBLE);
         }
     }
 

@@ -242,13 +242,6 @@
       <option name="presentableId" value="Default" />
       <updated>1629726477167</updated>
     </task>
-    <task id="LOCAL-00068" summary="Start Memory.">
-      <created>1635173537024</created>
-      <option name="number" value="00068" />
-      <option name="presentableId" value="LOCAL-00068" />
-      <option name="project" value="LOCAL" />
-      <updated>1635173537024</updated>
-    </task>
     <task id="LOCAL-00069" summary="Start Memory 1.">
       <created>1635344040064</created>
       <option name="number" value="00069" />
@@ -585,12 +578,18 @@
       <option name="project" value="LOCAL" />
       <updated>1673105387711</updated>
     </task>
-    <option name="localTasksCounter" value="117" />
+    <task id="LOCAL-00117" summary="SupaMasterActivity Richtig/Vorhanden überprüfung Take3.">
+      <created>1673184141456</created>
+      <option name="number" value="00117" />
+      <option name="presentableId" value="LOCAL-00117" />
+      <option name="project" value="LOCAL" />
+      <updated>1673184141457</updated>
+    </task>
+    <option name="localTasksCounter" value="118" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Größen anpassungen 10. NonoGram. Fertig" />
     <MESSAGE value="Größen anpassungen 11. SuppenHirn. EntelichFertig" />
     <MESSAGE value="Memory Überarbeitet." />
     <MESSAGE value="Memory Überarbeitet. Hoffentlich Fertig." />
@@ -615,6 +614,7 @@
     <MESSAGE value="SupaMasterActivity diverse Anpassungen." />
     <MESSAGE value="SupaMasterActivity Richtig/Vorhanden überprüfung Start." />
     <MESSAGE value="SupaMasterActivity Richtig/Vorhanden überprüfung Take2." />
-    <option name="LAST_COMMIT_MESSAGE" value="SupaMasterActivity Richtig/Vorhanden überprüfung Take2." />
+    <MESSAGE value="SupaMasterActivity Richtig/Vorhanden überprüfung Take3." />
+    <option name="LAST_COMMIT_MESSAGE" value="SupaMasterActivity Richtig/Vorhanden überprüfung Take3." />
   </component>
 </project>
