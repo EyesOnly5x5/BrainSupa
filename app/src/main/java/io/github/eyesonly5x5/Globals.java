@@ -9,6 +9,7 @@ import android.media.AudioAttributes;
 import android.media.SoundPool;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -176,6 +177,7 @@ public class Globals  extends ListActivity {
             Button button = buttons.get(id);
             button.setBackgroundColor(myRes.getColor(R.color.DarkGreen));
             button.setText("");
+            if( id > 4 ) button.setVisibility(View.GONE);
         }
     }
 
@@ -293,8 +295,8 @@ public class Globals  extends ListActivity {
             ret[i] = -1;
             c[0][i] = Colors[0][i];
             c[1][i] = Colors[Colors.length - 1][i];
-            Log.d("Debuggy:","I:"+i+" c0:"+c[0][i]+" c1:"+c[1][i]);
-            Colors[Colors.length - 1][i] = -1;
+            // Log.d("Debuggy:","I:"+i+" c0:"+c[0][i]+" c1:"+c[1][i]);
+            //Colors[Colors.length - 1][i] = -1;
             if (c[0][i] == c[1][i]) {
                 ret[i] = 1;
                 c[0][i] = -1;
