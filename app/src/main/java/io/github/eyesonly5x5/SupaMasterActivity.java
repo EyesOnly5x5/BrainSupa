@@ -128,7 +128,7 @@ public class SupaMasterActivity extends AppCompatActivity {
     @SuppressLint("ResourceAsColor")
     private Button addbtn( int id) {
         RelativeLayout rLbutty = (RelativeLayout) findViewById(R.id.butty);
-        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams((int)(daten.getButy()*daten.getMetrics().getFaktor()), (int)(daten.getButy()*daten.getMetrics().getFaktor()));
+        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams((int)(daten.getButx()*daten.getMetrics().getFaktor()), (int)(daten.getButx()*daten.getMetrics().getFaktor()));
         layoutParams.setMargins(10, 10, 0, 0);
 
         Button button = new Button(this);

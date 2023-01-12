@@ -202,6 +202,7 @@ public class Globals  extends ListActivity {
         return( AnzBut );
     }
 
+    public int getButx(){ return( (metrics.getFaktor()<2)?Buty*2:(Buty*3/4)*2 ); }
     public int getButy(){ return( (metrics.getFaktor()<2)?Buty:Buty*3/4 ); }
 
     public int[] getButtonIDs() {
