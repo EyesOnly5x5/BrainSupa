@@ -22,7 +22,6 @@
     <list default="true" id="abfb1ea1-b31d-4b67-ba76-4df93fcb9f09" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetDropDown.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deploymentTargetDropDown.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/io/github/eyesonly5x5/Globals.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/io/github/eyesonly5x5/Globals.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/io/github/eyesonly5x5/SupaMasterActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/io/github/eyesonly5x5/SupaMasterActivity.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -242,13 +241,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1629726477167</updated>
-    </task>
-    <task id="LOCAL-00070" summary="Start Memory 2.">
-      <created>1635351136932</created>
-      <option name="number" value="00070" />
-      <option name="presentableId" value="LOCAL-00070" />
-      <option name="project" value="LOCAL" />
-      <updated>1635351136933</updated>
     </task>
     <task id="LOCAL-00071" summary="Start Memory 3.">
       <created>1635351918027</created>
@@ -586,12 +578,18 @@
       <option name="project" value="LOCAL" />
       <updated>1673189479952</updated>
     </task>
-    <option name="localTasksCounter" value="119" />
+    <task id="LOCAL-00119" summary="SupaMasterActivity Richtig/Vorhanden überprüfung Take3b.">
+      <created>1673537098266</created>
+      <option name="number" value="00119" />
+      <option name="presentableId" value="LOCAL-00119" />
+      <option name="project" value="LOCAL" />
+      <updated>1673537098266</updated>
+    </task>
+    <option name="localTasksCounter" value="120" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Memory Überarbeitet." />
     <MESSAGE value="Memory Überarbeitet. Hoffentlich Fertig." />
     <MESSAGE value="BrainSource Init" />
     <MESSAGE value="BrainSource Überarbeitet" />
@@ -616,6 +614,7 @@
     <MESSAGE value="SupaMasterActivity Richtig/Vorhanden überprüfung Take2." />
     <MESSAGE value="SupaMasterActivity Richtig/Vorhanden überprüfung Take3." />
     <MESSAGE value="SupaMasterActivity Richtig/Vorhanden überprüfung Take3a." />
-    <option name="LAST_COMMIT_MESSAGE" value="SupaMasterActivity Richtig/Vorhanden überprüfung Take3a." />
+    <MESSAGE value="SupaMasterActivity Richtig/Vorhanden überprüfung Take3b." />
+    <option name="LAST_COMMIT_MESSAGE" value="SupaMasterActivity Richtig/Vorhanden überprüfung Take3b." />
   </component>
 </project>

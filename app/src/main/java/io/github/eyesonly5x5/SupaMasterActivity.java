@@ -42,12 +42,18 @@ public class SupaMasterActivity extends AppCompatActivity {
                 daten.ColorMischer2( btnLaenge );
                 Mischa.setText( R.string.title9a );
             } else {
+                for( int j = 0; j<5; j++ ){
+                    Log.d( "Debuggy:", "Ja:"+j+":"+daten.getColors()[daten.getColors().length-1][j]);
+                }
                 if( checkIt() ) {
                     daten.getSoundBib(daten.getGewonnen()).playSound();
                     daten.setGewonnen(true);
                     Mischa.setText(R.string.Mischa);
                 } else {
                     daten.incZuege();
+                    for( int j = 0; j<5; j++ ){
+                        Log.d( "Debuggy:", "Jb:"+j+":"+daten.getColors()[daten.getColors().length-1][j]);
+                    }
                 }
             }
         });
@@ -103,23 +109,30 @@ public class SupaMasterActivity extends AppCompatActivity {
         Log.d("Debuggy:", "werte:" + werte[0] +":"+ werte[1] +":"+ werte[2] +":"+ werte[3] +":"+ werte[4] );
         for(int i=(daten.getZuege() * 5), j = 0; (i < ((daten.getZuege() + 1) * 5)) && (i < BUTTON_IDS.length); i++, j++ ) {
             id1 = BUTTON_IDS[i];
+            // Log.d( "Debuggy:", "Id1:"+id1);
+            // Log.d( "Debuggy:", "IdX:"+id1+":"+(id1-1)%daten.getAnzahl());
             Button button = findViewById(id1);
             button.setVisibility(View.VISIBLE);
             // Log.d("Debuggy:", "J:" + j );
             if( werte[j] == 1 ){
-                richtig++;
                 id2 = BUTTON_IDS[i-5];
                 Button tmpBut = findViewById(id2);
                 changeColor( button, tmpBut, id1 );
             } else if( werte[j] == 0 ){
                 id2 = BUTTON_IDS[i-5];
-                Log.d("Debuggy:", "i:" + i +" j:"+ j +" id:"+id2 );
+                // Log.d("Debuggy:", "i:" + i +" j:"+ j +" id:"+id2 );
                 Button tmpBut = findViewById(id2);
-                tmpBut.setVisibility(View.GONE);
+                changeColor( true, id1 );
+                // tmpBut.setVisibility(View.GONE);
             } else {
+                id2 = BUTTON_IDS[i-5];
+                changeColor( true, id1 );
+                // Log.d("Debuggy:", "i:" + i +" j:"+ j +" id:"+id2 );
             }
         }
+        for( int j = 0; j < werte.length; j++ ) if( werte[j] == 1 ) richtig++;
         ret = (richtig == 5);
+        Log.d("Debuggy:", "richtig:" + richtig );
         if( ret ) daten.setGewonnen( true );
         if( daten.getZuege()>=4 ) ret = true;
         return( ret );
@@ -176,11 +189,15 @@ public class SupaMasterActivity extends AppCompatActivity {
     }
 
     private void changeColor( Button btn2, Button btn1, int id ) {
-        daten.getColors()[daten.getColors().length-1][id%daten.getAnzahl()] = Integer.parseInt(btn1.getText().toString());
+        daten.getColors()[daten.getColors().length-1][(id-1)%daten.getAnzahl()] = Integer.parseInt(btn1.getText().toString());
         // Log.d("Debuggy:", "Color:" + Integer.parseInt(btn1.getText().toString() ));
-        btn2.setBackgroundColor( daten.getColor().get( daten.getColors()[daten.getColors().length-1][id%daten.getAnzahl()] ) );
+        btn2.setBackgroundColor( daten.getColor().get( daten.getColors()[daten.getColors().length-1][(id-1)%daten.getAnzahl()] ) );
         btn2.setText( btn1.getText() );
         btn2.setTextColor( btn1.getTextColors() );
+    }
+
+    private void changeColor( Boolean Flg, int id ) {
+        daten.getColors()[daten.getColors().length-1][(id-1)%daten.getAnzahl()] = -1;
     }
 
     public void showPopup(View v, int id) {
