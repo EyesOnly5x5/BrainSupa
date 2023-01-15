@@ -3,7 +3,6 @@ package io.github.eyesonly5x5;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -17,6 +16,11 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.util.Scanner;
+
 import de.eyesonly5x5.brainsupa.R;
 
 public class SupaMasterActivity extends AppCompatActivity {
@@ -25,6 +29,8 @@ public class SupaMasterActivity extends AppCompatActivity {
     private int btnLaenge = 2;
     Globals daten = Globals.getInstance();
     int[] BUTTON_IDS;
+    private Context myContext = daten.getMyContext();
+    TextView vL;
 
     @SuppressLint({"SetTextI18n", "ResourceType"})
     @Override
@@ -32,28 +38,32 @@ public class SupaMasterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_supahirn);
         BUTTON_IDS = daten.getButtonIDs();
+        loadSuperHirn();
         TextView vw = findViewById(R.id.Kopf);
         vw.setTextSize( daten.getMetrics().pxToDp((int)(vw.getTextSize()*2*daten.getMetrics().getFaktor())) );
         vw.setText( daten.getWoMischen() );
+        vL = findViewById(R.id.Level);
+        vL.setText( "Level:"+(btnLaenge-2) );
         Button Mischa = findViewById(R.id.Mischa);
         Mischa.setTextSize( daten.getMetrics().pxToDp((int)(Mischa.getTextSize()*daten.getMetrics().getFaktor())) );
         Mischa.setOnClickListener(view -> {
             if( Mischa.getText().equals( getApplicationContext().getString( R.string.Mischa ) ) ){
                 daten.ColorMischer2( btnLaenge );
                 Mischa.setText( R.string.title9a );
+                vL.setText( "Level:"+(btnLaenge-2) );
             } else {
-                for( int j = 0; j<5; j++ ){
-                    Log.d( "Debuggy:", "Ja:"+j+":"+daten.getColors()[daten.getColors().length-1][j]);
-                }
                 if( checkIt() ) {
+                    if( daten.getGewonnen() ){
+                        btnLaenge++;
+                        if( btnLaenge >= 11 ) btnLaenge = 10;
+                        vL.setText( "Level:"+(btnLaenge-2) );
+                        saveSuperHirn();
+                    }
                     daten.getSoundBib(daten.getGewonnen()).playSound();
                     daten.setGewonnen(true);
                     Mischa.setText(R.string.Mischa);
                 } else {
                     daten.incZuege();
-                    for( int j = 0; j<5; j++ ){
-                        Log.d( "Debuggy:", "Jb:"+j+":"+daten.getColors()[daten.getColors().length-1][j]);
-                    }
                 }
             }
         });
@@ -92,6 +102,12 @@ public class SupaMasterActivity extends AppCompatActivity {
             case R.id.mischy:
                 daten.ColorMischer2( btnLaenge );
                 return( true );
+            case R.id.DeleLevel:
+                deleSuperHirn();
+                btnLaenge = 2;
+                daten.ColorMischer2( btnLaenge );
+                vL.setText( "Level:"+(btnLaenge-2) );
+                return( true );
             case R.id.AnLeit:
                 daten.Anleitung( this, R.string.AnleitSuppa );
                 return( true );
@@ -105,34 +121,26 @@ public class SupaMasterActivity extends AppCompatActivity {
         int id1 = 0;
         int id2 = 0;
         int[] werte = daten.checkColor1( );
-        // Log.d("Debuggy:", "id:" + id + " btn:" + button.getText()+" Zg:"+daten.getZuege());
-        Log.d("Debuggy:", "werte:" + werte[0] +":"+ werte[1] +":"+ werte[2] +":"+ werte[3] +":"+ werte[4] );
         for(int i=(daten.getZuege() * 5), j = 0; (i < ((daten.getZuege() + 1) * 5)) && (i < BUTTON_IDS.length); i++, j++ ) {
             id1 = BUTTON_IDS[i];
-            // Log.d( "Debuggy:", "Id1:"+id1);
-            // Log.d( "Debuggy:", "IdX:"+id1+":"+(id1-1)%daten.getAnzahl());
             Button button = findViewById(id1);
             button.setVisibility(View.VISIBLE);
-            // Log.d("Debuggy:", "J:" + j );
             if( werte[j] == 1 ){
                 id2 = BUTTON_IDS[i-5];
                 Button tmpBut = findViewById(id2);
                 changeColor( button, tmpBut, id1 );
+                tmpBut.setText( "R:"+tmpBut.getText() );
             } else if( werte[j] == 0 ){
                 id2 = BUTTON_IDS[i-5];
-                // Log.d("Debuggy:", "i:" + i +" j:"+ j +" id:"+id2 );
                 Button tmpBut = findViewById(id2);
+                tmpBut.setText( "V:"+tmpBut.getText() );
                 changeColor( true, id1 );
-                // tmpBut.setVisibility(View.GONE);
             } else {
-                id2 = BUTTON_IDS[i-5];
                 changeColor( true, id1 );
-                // Log.d("Debuggy:", "i:" + i +" j:"+ j +" id:"+id2 );
             }
         }
         for( int j = 0; j < werte.length; j++ ) if( werte[j] == 1 ) richtig++;
         ret = (richtig == 5);
-        Log.d("Debuggy:", "richtig:" + richtig );
         if( ret ) daten.setGewonnen( true );
         if( daten.getZuege()>=4 ) ret = true;
         return( ret );
@@ -190,7 +198,6 @@ public class SupaMasterActivity extends AppCompatActivity {
 
     private void changeColor( Button btn2, Button btn1, int id ) {
         daten.getColors()[daten.getColors().length-1][(id-1)%daten.getAnzahl()] = Integer.parseInt(btn1.getText().toString());
-        // Log.d("Debuggy:", "Color:" + Integer.parseInt(btn1.getText().toString() ));
         btn2.setBackgroundColor( daten.getColor().get( daten.getColors()[daten.getColors().length-1][(id-1)%daten.getAnzahl()] ) );
         btn2.setText( btn1.getText() );
         btn2.setTextColor( btn1.getTextColors() );
@@ -210,7 +217,6 @@ public class SupaMasterActivity extends AppCompatActivity {
             // do sth here on dismiss
         });*/
         for( int i = 0; i < btnLaenge; i++ ) {
-            // Log.d("Debuggy:", ""+i);
             TextView tmp = popupView.findViewById(btn[i]);
             tmp.setHeight( (int)(daten.getButy()*daten.getMetrics().getFaktor()) );
             int finalI = i;
@@ -220,5 +226,53 @@ public class SupaMasterActivity extends AppCompatActivity {
             });
         }
         popupWindow.showAsDropDown( v );
+    }
+
+    private void saveSuperHirn( ){
+        String data = "";
+        data += ""+btnLaenge+"";
+        speichern( "SuperHirn.txt", data );
+    }
+
+    private void loadSuperHirn(){
+        String data;
+        data = laden( "SuperHirn.txt", "2" );
+        btnLaenge = Integer.parseInt( data );
+    }
+
+    private void deleSuperHirn(){
+        loeschen( "SuperHirn.txt" );
+    }
+
+    private void speichern( String filename, String data ){
+        FileOutputStream fileOutputStream;
+        try {
+            fileOutputStream = myContext.openFileOutput(filename, myContext.MODE_PRIVATE);
+            fileOutputStream.write(data.getBytes());
+            fileOutputStream.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void loeschen( String filename ){
+        File file = new File( myContext.getFilesDir(), filename );
+        file.delete();
+    }
+
+    private String laden( String filename, String vorlage ){
+        String ret = "";
+        ret = vorlage;
+        try {
+            File in = new File( myContext.getFilesDir(), filename );
+            Scanner scanner = new Scanner(in);
+            while (scanner.hasNext()) {
+                String line = scanner.nextLine();
+                ret = line;
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        return( ret );
     }
 }

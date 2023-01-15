@@ -102,6 +102,7 @@ public class Globals  extends ListActivity {
         myContext = c;
         myRes = myContext.getResources();
     }
+    public Context getMyContext( ) { return( myContext ); }
 
     public void addButton(Button button) {
         buttons.add(button);

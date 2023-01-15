@@ -19,11 +19,23 @@
         android:textSize="20sp"
         android:textStyle="bold|italic" />
 
+    <TextView
+        android:id="@+id/Level"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Kopf"
+        android:gravity="center"
+        android:text=""
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
     <RelativeLayout
         android:id="@+id/butty"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/Kopf"
+        android:layout_below="@id/Level"
         android:gravity="center_horizontal">
     </RelativeLayout>
 
