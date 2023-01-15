@@ -92,7 +92,7 @@ public class SupaMasterActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu( Menu menu ){
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu, menu);
+        inflater.inflate(R.menu.menu_2, menu);
         return( true );
     }
 

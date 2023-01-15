@@ -46,7 +46,10 @@
     <string name="neuSt">Neu Start</string>
     <string name="AnleitSuppa">
         SuppaHirn, SupraHirni\n\nEs gilt die farben herauszufinden.\n
-        Einfaches MasterMind sprich Superhirn.%1$s
+        Einfaches MasterMind sprich Superhirn.\n\n
+        SupaMaster finde die Farben,\ndu hast aber nur 4 versuche.\n
+        Level 0 = 2 Farben, Level 1 = 3 Farben usw. bis Level 8 = 10 Farben.\n
+        R: x = Farbe an richtiger stelle.\nV: x = Farbe vorhanden aber falsche stelle.%1$s
     </string>
     <string name="Wunschliste">\n-----\n
         Meine Amazon Wunschliste: https://ogy.de/hiaq\n

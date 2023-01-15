@@ -8,6 +8,12 @@
         android:tooltipText="@string/Mischa"
         app:showAsAction="never" />
     <item
+        android:id="@+id/DeleLevel"
+        android:title="@string/DeleLevel"
+        android:icon="@mipmap/ic_mischer_round"
+        android:tooltipText="@string/AnLeit"
+        app:showAsAction="never" />
+    <item
         android:id="@+id/AnLeit"
         android:title="@string/AnLeit"
         android:icon="@mipmap/ic_mischer_round"
