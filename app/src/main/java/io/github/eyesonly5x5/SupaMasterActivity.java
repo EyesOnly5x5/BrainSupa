@@ -53,9 +53,14 @@ public class SupaMasterActivity extends AppCompatActivity {
                 vL.setText( "Level:"+(btnLaenge-2) );
             } else {
                 if( checkIt() ) {
-                    if( daten.getGewonnen() ){
+                    if( daten.getGewonnen() ) {
                         btnLaenge++;
-                        if( btnLaenge >= 11 ) btnLaenge = 10;
+                        if (btnLaenge >= 11) btnLaenge = 10;
+                        vL.setText("Level:" + (btnLaenge - 2));
+                        saveSuperHirn();
+                    } else {
+                        btnLaenge--;
+                        if( btnLaenge < 2 ) btnLaenge = 2;
                         vL.setText( "Level:"+(btnLaenge-2) );
                         saveSuperHirn();
                     }

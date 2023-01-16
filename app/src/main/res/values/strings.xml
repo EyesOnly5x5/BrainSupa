@@ -49,7 +49,8 @@
         Einfaches MasterMind sprich Superhirn.\n\n
         SupaMaster finde die Farben,\ndu hast aber nur 4 versuche.\n
         Level 0 = 2 Farben, Level 1 = 3 Farben usw. bis Level 8 = 10 Farben.\n
-        R: x = Farbe an richtiger stelle.\nV: x = Farbe vorhanden aber falsche stelle.%1$s
+        R: x = Farbe an richtiger stelle.\nV: x = Farbe vorhanden aber falsche stelle.\n
+        Gelößt Level+1, NICHT gelößt Level-1.%1$s
     </string>
     <string name="Wunschliste">\n-----\n
         Meine Amazon Wunschliste: https://ogy.de/hiaq\n
