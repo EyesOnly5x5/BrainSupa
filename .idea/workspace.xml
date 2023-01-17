@@ -19,11 +19,9 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abfb1ea1-b31d-4b67-ba76-4df93fcb9f09" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetDropDown.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deploymentTargetDropDown.xml" afterDir="false" />
+    <list default="true" id="abfb1ea1-b31d-4b67-ba76-4df93fcb9f09" name="Default Changelist" comment="SupaMasterActivity hoffentlich Fertig.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/io/github/eyesonly5x5/Globals.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/io/github/eyesonly5x5/Globals.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/io/github/eyesonly5x5/SupaMasterActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/io/github/eyesonly5x5/SupaMasterActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/debug/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/debug/app-debug.apk" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -243,13 +241,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1629726477167</updated>
-    </task>
-    <task id="LOCAL-00076" summary="Start xXx Start.">
-      <created>1635786857835</created>
-      <option name="number" value="00076" />
-      <option name="presentableId" value="LOCAL-00076" />
-      <option name="project" value="LOCAL" />
-      <updated>1635786857836</updated>
     </task>
     <task id="LOCAL-00077" summary="Start Pos-I-Tron Stufe 1.">
       <created>1635959955946</created>
@@ -587,12 +578,18 @@
       <option name="project" value="LOCAL" />
       <updated>1673882608240</updated>
     </task>
-    <option name="localTasksCounter" value="125" />
+    <task id="LOCAL-00125" summary="SupaMasterActivity hoffentlich Fertig.">
+      <created>1673967842656</created>
+      <option name="number" value="00125" />
+      <option name="presentableId" value="LOCAL-00125" />
+      <option name="project" value="LOCAL" />
+      <updated>1673967842657</updated>
+    </task>
+    <option name="localTasksCounter" value="126" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="BrainSupa popUPmenu Es wird langsam wat" />
     <MESSAGE value="BrainSupa popUPmenu Fertisch." />
     <MESSAGE value="Paket von brainstrom nach brainsupa." />
     <MESSAGE value="ic_launcher* logos angebasst." />
@@ -617,6 +614,7 @@
     <MESSAGE value="SupaMasterActivity Anleitung erweitert." />
     <MESSAGE value="SupaMasterActivity Level Up/Down erweitert." />
     <MESSAGE value="SupaMasterActivity Fertig." />
-    <option name="LAST_COMMIT_MESSAGE" value="SupaMasterActivity Fertig." />
+    <MESSAGE value="SupaMasterActivity hoffentlich Fertig." />
+    <option name="LAST_COMMIT_MESSAGE" value="SupaMasterActivity hoffentlich Fertig." />
   </component>
 </project>
