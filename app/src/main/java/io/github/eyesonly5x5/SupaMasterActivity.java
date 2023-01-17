@@ -43,6 +43,7 @@ public class SupaMasterActivity extends AppCompatActivity {
         vw.setTextSize( daten.getMetrics().pxToDp((int)(vw.getTextSize()*2*daten.getMetrics().getFaktor())) );
         vw.setText( daten.getWoMischen() );
         vL = findViewById(R.id.Level);
+        vL.setTextSize( daten.getMetrics().pxToDp((int)(vL.getTextSize()*2*daten.getMetrics().getFaktor())) );
         vL.setText( "Level:"+(btnLaenge-2) );
         Button Mischa = findViewById(R.id.Mischa);
         Mischa.setTextSize( daten.getMetrics().pxToDp((int)(Mischa.getTextSize()*daten.getMetrics().getFaktor())) );
@@ -178,7 +179,8 @@ public class SupaMasterActivity extends AppCompatActivity {
         button.setTag("" + id);
         button.setText("");
         button.setId( id );
-        button.setTextSize( daten.getMetrics().pxToDp((int)(getResources().getDimension(R.dimen.SupaHTxt)*daten.getMetrics().getFaktor(true ))) );
+        // button.setTextSize( daten.getMetrics().pxToDp((int)(getResources().getDimension(R.dimen.SupaHTxt)*daten.getMetrics().getFaktor(true ))) );
+        button.setTextSize( daten.getMetrics().pxToDp((int)(button.getTextSize()*2*daten.getMetrics().getFaktor())) );
         button.setPadding( 0, 0, 0, 0 );
 
         rLbutty.addView(button, layoutParams);
@@ -215,6 +217,12 @@ public class SupaMasterActivity extends AppCompatActivity {
     public void showPopup(View v, int id) {
         LayoutInflater layoutInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         final View popupView = layoutInflater.inflate( layPop[btnLaenge], null);
+        //RelativeLayout atnot = (RelativeLayout) popupView.findViewById(R.id.popUPs);
+        //atnot.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED);
+        //int height = (int) (atnot.getMeasuredHeight()*2.05f);
+        //int width = (int) (atnot.getMeasuredWidth()*6);
+        //Log.d("Debuggy:","height: "+height+", width: "+width);
+        //PopupWindow popupWindow = new PopupWindow( popupView, width, height );
         PopupWindow popupWindow = new PopupWindow( popupView, (int)(daten.getButy()*daten.getMetrics().getFaktor()*1.5f),(int)((daten.getButy()+popupView.getContext().getResources().getDimension(R.dimen.Space)+3  )*daten.getMetrics().getFaktor()*(1.1f-(btnLaenge*0.01f)))*btnLaenge );
 
         popupWindow.setOutsideTouchable(true);
@@ -224,6 +232,7 @@ public class SupaMasterActivity extends AppCompatActivity {
         for( int i = 0; i < btnLaenge; i++ ) {
             TextView tmp = popupView.findViewById(btn[i]);
             tmp.setHeight( (int)(daten.getButy()*daten.getMetrics().getFaktor()) );
+            tmp.setTextSize( daten.getMetrics().pxToDp((int)(tmp.getTextSize()*2*daten.getMetrics().getFaktor())) );
             int finalI = i;
             tmp.setOnClickListener(view -> {
                 changeColor( id, finalI);

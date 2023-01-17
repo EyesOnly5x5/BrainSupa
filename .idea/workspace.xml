@@ -10,6 +10,7 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="Debuggy" />
     <option name="TOOL_WINDOW_LOG_LEVEL" value="debug" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
     <option name="TOOL_WINDOW_REGEXP_FILTER" value="false" />
@@ -19,7 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="abfb1ea1-b31d-4b67-ba76-4df93fcb9f09" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetDropDown.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deploymentTargetDropDown.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/io/github/eyesonly5x5/Globals.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/io/github/eyesonly5x5/Globals.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/io/github/eyesonly5x5/SupaMasterActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/io/github/eyesonly5x5/SupaMasterActivity.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -239,13 +243,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1629726477167</updated>
-    </task>
-    <task id="LOCAL-00075" summary="Start Memory Fertig.">
-      <created>1635694640747</created>
-      <option name="number" value="00075" />
-      <option name="presentableId" value="LOCAL-00075" />
-      <option name="project" value="LOCAL" />
-      <updated>1635694640747</updated>
     </task>
     <task id="LOCAL-00076" summary="Start xXx Start.">
       <created>1635786857835</created>
@@ -583,12 +580,18 @@
       <option name="project" value="LOCAL" />
       <updated>1673857988323</updated>
     </task>
-    <option name="localTasksCounter" value="124" />
+    <task id="LOCAL-00124" summary="SupaMasterActivity Fertig.">
+      <created>1673882608240</created>
+      <option name="number" value="00124" />
+      <option name="presentableId" value="LOCAL-00124" />
+      <option name="project" value="LOCAL" />
+      <updated>1673882608240</updated>
+    </task>
+    <option name="localTasksCounter" value="125" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="BrainSupa popUPmenu start" />
     <MESSAGE value="BrainSupa popUPmenu Es wird langsam wat" />
     <MESSAGE value="BrainSupa popUPmenu Fertisch." />
     <MESSAGE value="Paket von brainstrom nach brainsupa." />
@@ -613,6 +616,7 @@
     <MESSAGE value="SupaMasterActivity Richtig/Vorhanden überprüfung Take4 Fertig." />
     <MESSAGE value="SupaMasterActivity Anleitung erweitert." />
     <MESSAGE value="SupaMasterActivity Level Up/Down erweitert." />
-    <option name="LAST_COMMIT_MESSAGE" value="SupaMasterActivity Level Up/Down erweitert." />
+    <MESSAGE value="SupaMasterActivity Fertig." />
+    <option name="LAST_COMMIT_MESSAGE" value="SupaMasterActivity Fertig." />
   </component>
 </project>
